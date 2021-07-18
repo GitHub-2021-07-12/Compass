@@ -1,11 +1,25 @@
-self.addEventListener('install', (event) => console.log(event.type));
 self.addEventListener('activate', (event) => console.log(event.type));
-self.addEventListener('fetch', (event) => console.log(event.type));
-
+self.addEventListener('install', (event) => console.log(event.type));
 
 // self.addEventListener('activate', (event) => event.waitUntil(clients.claim()));
 self.addEventListener('install', (event) => skipWaiting());
-// self.addEventListener('activate', (event) => fetch('a.txt'));
+
+self.addEventListener('fetch', (event) => console.log(event.request.url));
+
+
+
+
+async function f() {
+  let clients = await self.clients.matchAll();
+  
+  for (let client of clients) {
+    client.postMessage(clients.length);
+  }
+}
+
+// setInterval(f, 1e3);
+
+
 
 
 // self.addEventListener('fetch', (event) => {
@@ -24,20 +38,18 @@ self.addEventListener('install', (event) => skipWaiting());
 // });
 
 
-// importScripts('a.js');
-// fetch('a.txt');
 
 
-// self.addEventListener('message', (event) => event.source.postMessage('SW ' + event.data));
+self.addEventListener('fetch', (event) => event.respondWith(response_define(event.request)));
 
-
-async function f() {
-  let clients_list = await clients.matchAll();
+async function response_define(request) {
+  let cache = await self.caches.open('Compass');
+  let response = await cache.match(request);
   
-  for (var i = 0; i < clients_list.length; i++) {
-    // clients.openWindow(clients_list[i].url);
-    clients_list[i].postMessage(clients_list.length);
-  }
+  if (response) return response;
+  
+  response = await fetch(request);
+  cache.put(request, response.clone());
+  
+  return response;
 }
-
-// setInterval(f, 1e3);
