@@ -3,12 +3,24 @@
 
 <html>
   <head>
+    <link rel="manifest" href="./Manifest.json">
     <meta charset='utf-8'>
-    <script type='module' src='./ServiceWorker/Client.js'></script>
-    <script type='module' src='./Compass.js'></script>
+    <meta name='viewport' content='width=500, user-scalable=no'>
+    <title>Compass</title>
+    
+    <!-- <script type='module' src='./ServiceWorker/Client.js'></script> -->
+    <script type='module' src='./Components/Compass/Compass.js'></script>
+    
+    <style>
+      :root, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
   </head>
   
   <body>
-    
+    <c-compass></c-compass>
   </body>
 </html>

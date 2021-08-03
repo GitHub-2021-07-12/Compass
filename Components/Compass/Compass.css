@@ -1,0 +1,140 @@
+:host {
+  --arrow_size: 200px;
+  --arrow_thickness: 40px;
+  --arrow_width: 80px;
+  
+  /* --cube_size: 200px; */
+  
+  background: #222;
+  display: contents;
+  height: 100%;
+}
+
+
+x_compass {
+  --_arrow_size_half: calc(var(--arrow_size) / 2);
+  --_arrow_thickness_half: calc(var(--arrow_thickness) / 2);
+  --_arrow_width_half: calc(var(--arrow_width) / 2);
+  --_dir_angle: 0;
+  --_rotation_angle: 0;
+  --_rotation_vector_x: 0;
+  --_rotation_vector_y: 0;
+  --_rotation_vector_z: 0;
+  
+  /* --_cube_size_half: calc(var(--cube_size) / 2); */
+  
+  all: inherit;
+  display: flex !important;
+  overflow: hidden;
+  perspective: 400px;
+}
+
+
+
+
+.arrow {
+  height: var(--arrow_size);
+  margin: auto;
+  transform: rotate3d(var(--_rotation_vector_x), var(--_rotation_vector_y), var(--_rotation_vector_z), calc(var(--_rotation_angle) * 1rad)) rotateZ(calc(var(--_dir_angle) * 1deg));
+  transform-style: preserve-3d;
+  width: var(--arrow_size);
+}
+
+.arrow_face {
+  fill: #4f4;
+  opacity: 0.8;
+  position: absolute;
+  stroke: #0004;
+  /* stroke-width: 0.5; */
+}
+
+.arrow_face_top {
+  fill: #f44;
+  transform: translateZ(var(--_arrow_thickness_half));
+}
+
+.arrow_face_bottom {
+  fill: #44f;
+  transform: rotateY(180deg) translateZ(var(--_arrow_thickness_half));
+}
+
+.arrow_face_back {
+  transform: rotateX(-90deg) translateZ(var(--_arrow_size_half));
+}
+
+.arrow_face_back_left {
+  transform: rotateX(-90deg);
+}
+
+.arrow_face_back_right {
+  transform: rotateX(-90deg);
+}
+
+.arrow_face_left {
+  transform: rotateY(-90deg) translateZ(var(--_arrow_width_half));
+}
+
+.arrow_face_right {
+  transform: rotateY(90deg) translateZ(var(--_arrow_width_half));
+}
+
+.arrow_face_front_left {
+  transform: rotateY(-90deg) rotateX(45deg);
+  transform-origin: center top;
+}
+
+.arrow_face_front_right {
+  transform: rotateY(90deg) rotateX(45deg);
+  transform-origin: center top;
+}
+
+
+
+
+/* .cube {
+  height: var(--cube_size);
+  margin: auto;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(30deg);
+  transition: transform 0.2s linear 0s;
+  width: var(--cube_size);
+}
+
+.cube_face {
+  opacity: 0.8;
+  position: absolute;
+}
+
+.cube_face:hover {
+  opacity: initial;
+}
+
+.cube_face_front {
+  fill: #f00;
+  transform: translateZ(var(--_cube_size_half));
+}
+
+.cube_face_back {
+  fill: #0f0;
+  transform: rotateY(180deg) translateZ(var(--_cube_size_half));
+}
+
+.cube_face_right {
+  fill: #00f;
+  transform: rotateY(90deg) translateZ(var(--_cube_size_half));
+}
+
+.cube_face_left {
+  fill: #f0f;
+  transform: rotateY(-90deg) translateZ(var(--_cube_size_half));
+}
+
+.cube_face_top {
+  fill: #ff0;
+  transform: rotateX(90deg) translateZ(var(--_cube_size_half));
+}
+
+.cube_face_bottom {
+  fill: #0ff;
+  transform: rotateX(-90deg) translateZ(var(--_cube_size_half));
+} */

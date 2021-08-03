@@ -1,0 +1,15 @@
+{
+  "background_color": "#066",
+  "display": "fullscreen",
+  "name": "Compass",
+  "orientation": "portrait",
+  "short_name": "Compass",
+  "start_url": "./index.html",
+  "theme_color": "#0aa",
+  
+  "icons": [{
+    "src": "./Chess.png",
+    "sizes": "128x128"
+  }]
+}
+

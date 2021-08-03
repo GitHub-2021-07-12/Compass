@@ -1,1 +1,1 @@
-self.importScripts('./ServiceWorker/Server.js');
+importScripts('./ServiceWorker/Server.js');
