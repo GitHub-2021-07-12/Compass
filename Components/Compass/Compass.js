@@ -16,7 +16,6 @@ export class Compass extends Component {
   _arrow_rotate() {
     this._quaternion.init(...this._sensor_orientation.quaternion);
     let [vector, angle] = this._quaternion.decay();
-    // this._arrow.style.transform = `rotate3d(${vector.x}, ${-vector.y}, ${vector.z}, ${angle}rad) rotateZ(0deg)`;
     this._arrow.style.setProperty('--_dir_angle', this._dir_angle);
     this._arrow.style.setProperty('--_rotation_angle', angle);
     this._arrow.style.setProperty('--_rotation_vector_x', vector.x);
