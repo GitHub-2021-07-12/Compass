@@ -40,7 +40,7 @@ export class Compass extends Component {
     ])
       .then((results) => {
         if (results.every((result) => result.state == 'granted')) {
-          sensor.start();
+          this._sensor_orientation.start();
         }
         else {
           alert('No permissions');
