@@ -24,7 +24,6 @@ async function _caches_remove() {
 
 function _on_activate(event) {
   event.waitUntil(_caches_remove());
-  // event.waitUntil(clients.claim());
 }
 
 
@@ -48,7 +47,6 @@ async function _response_define(request) {
   
   try {
     response = await fetch(request);
-    // await cache.put(request, response.clone());
     cache.put(request, response.clone());
   }
   catch (error) {
