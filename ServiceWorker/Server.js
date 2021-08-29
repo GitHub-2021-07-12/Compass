@@ -35,8 +35,8 @@ function _on_fetch(event) {
 }
 
 
-function _on_install(event) {
-  // skipWaiting();
+function _on_install() {
+  skipWaiting();
 }
 
 
