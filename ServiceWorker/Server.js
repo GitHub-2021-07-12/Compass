@@ -24,6 +24,7 @@ async function _caches_remove() {
 
 function _on_activate(event) {
   event.waitUntil(_caches_remove());
+  event.waitUntil(clients.claim());
 }
 
 
