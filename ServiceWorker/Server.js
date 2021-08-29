@@ -3,9 +3,14 @@ importScripts('./ServiceWorker/Options.js');
 
 
 
-function _on_fetch(event) {
-  // clients.get(event.clientId).then((client) => client?.postMessage(event.request.url));
+function _on_activate() {
   
+  
+  
+}
+
+
+function _on_fetch(event) {
   if (event.request.method != 'GET') return;
   
   event.respondWith(_response_define(event.request));
@@ -20,7 +25,8 @@ async function _response_define(request) {
   
   try {
     response = await fetch(request);
-    await cache.put(request, response.clone());
+    // await cache.put(request, response.clone());
+    cache.put(request, response.clone());
   }
   catch (error) {
     response = new Response(null);
@@ -33,6 +39,7 @@ async function _response_define(request) {
 
 
 function main() {
+  addEventListener('activate', _on_activate);
   addEventListener('fetch', _on_fetch);
   addEventListener('install', (event) => skipWaiting());
 }

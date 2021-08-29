@@ -21,7 +21,7 @@ x_compass {
   all: inherit;
   display: flex !important;
   overflow: hidden;
-  perspective: 400px;
+  perspective: calc(var(--arrow_size) * 2);
 }
 
 
@@ -30,7 +30,15 @@ x_compass {
 .arrow {
   height: var(--arrow_size);
   margin: auto;
-  transform: rotate3d(var(--_rotation_vector_x), var(--_rotation_vector_y), var(--_rotation_vector_z), calc(var(--_rotation_angle) * 1rad)) rotateZ(calc(var(--_dir_angle) * 1deg));
+  transform:
+    rotate3d(
+      var(--_rotation_vector_x),
+      var(--_rotation_vector_y),
+      var(--_rotation_vector_z),
+      calc(var(--_rotation_angle) * 1rad)
+    )
+    rotateZ(calc(var(--_dir_angle) * 1deg))
+  ;
   transform-style: preserve-3d;
   width: var(--arrow_size);
 }

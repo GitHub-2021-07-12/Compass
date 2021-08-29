@@ -37,7 +37,7 @@ export class Component extends HTMLElement {
   
   static init(js_url = null, {css_url = true, html_url = true} = {}) {
     if (js_url) {
-      let url = js_url.replace(/.js$/, '');
+      let url = js_url.replace(/\.js$/, '');
       css_url = css_url ? `${url}.css` : null;
       html_url = html_url ? `${url}.html` : null;
       this._dom_promise = this._dom_promise_create({css_url, html_url});
