@@ -1,7 +1,4 @@
 let options = {
-  cache_dynamic: 'Compas',
-  resources: [
-    './ServiceWorker/a.js',
-    './ServiceWorker/b.js',
-  ],
+  cache_name: 'Compass',
+  version: 1,
 };
