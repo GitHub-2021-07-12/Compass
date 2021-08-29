@@ -24,7 +24,7 @@ async function _caches_remove() {
 
 function _on_activate(event) {
   event.waitUntil(_caches_remove());
-  event.waitUntil(clients.claim());
+  // event.waitUntil(clients.claim());
 }
 
 
@@ -36,7 +36,7 @@ function _on_fetch(event) {
 
 
 function _on_install(event) {
-  skipWaiting();
+  // skipWaiting();
 }
 
 
