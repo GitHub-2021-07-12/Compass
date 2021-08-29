@@ -1,4 +1,4 @@
 let options = {
   cache_name: 'Compass',
-  version: 1,
+  version: 4,
 };
