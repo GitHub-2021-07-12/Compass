@@ -3,17 +3,12 @@ importScripts('./ServiceWorker/Options.js');
 
 
 
-let _cache_name = `${options.cache_name}_${options.version}`;
-
-
-
-
 async function _caches_remove() {
   let caches_delete_promises = []
   let caches_keys = await caches.keys();
   
   for (let key of caches_keys) {
-    if (key == _cache_name) continue;
+    if (key == options.cache_name) continue;
     
     caches_delete_promises.push(caches.delete(key));
   }
@@ -23,7 +18,8 @@ async function _caches_remove() {
 
 
 function _on_activate(event) {
-  event.waitUntil(_caches_remove());
+  // event.waitUntil(_caches_remove());
+  _caches_remove();
 }
 
 
@@ -40,7 +36,7 @@ function _on_install() {
 
 
 async function _response_define(request) {
-  let cache = await caches.open(_cache_name);
+  let cache = await caches.open(options.cache_name);
   let response = await cache.match(request);
   
   if (response) return response;

@@ -1,4 +1,3 @@
 let options = {
-  cache_name: 'Compass',
-  version: 1,
+  cache_name: 'Compass_2',
 };
