@@ -1,3 +1,3 @@
 let options = {
-  cache_name: 'Compass_2',
+  cache_name: 'Compass_1',
 };
