@@ -1,5 +1,5 @@
 {
-  "background_color": "red",
+  "background_color": "#484",
   "display": "fullscreen",
   "icons": [{
     "sizes": "512x512",
@@ -9,5 +9,5 @@
   "orientation": "portrait",
   "short_name": "Compass",
   "start_url": "./index.html",
-  "theme_color": "blue"
+  "theme_color": "#484"
 }

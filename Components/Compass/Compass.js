@@ -30,20 +30,20 @@ export class Compass extends Component {
     this._arrow = this._root.querySelector('.arrow');
     
     this._sensor_orientation.addEventListener('reading', () => this._arrow_rotate());
-    // this._sensor_orientation.start();
+    this._sensor_orientation.start();
     
-    let permissions = await Promise.all([
-      navigator.permissions.query({name: 'accelerometer'}),
-      navigator.permissions.query({name: 'gyroscope'}),
-      navigator.permissions.query({name: 'magnetometer'}),
-    ]);
+    // let permissions = await Promise.all([
+    //   navigator.permissions.query({name: 'accelerometer'}),
+    //   navigator.permissions.query({name: 'gyroscope'}),
+    //   navigator.permissions.query({name: 'magnetometer'}),
+    // ]);
     
-    if (permissions.every((permission) => permission.state == 'granted')) {
-      this._sensor_orientation.start();
-    }
-    else {
-      alert('Требуется разрешение на использование датчиков в настройках браузера');
-    }
+    // if (permissions.every((permission) => permission.state == 'granted')) {
+    //   this._sensor_orientation.start();
+    // }
+    // else {
+    //   alert('Требуется разрешение на использование датчиков в настройках браузера');
+    // }
   }
   
   

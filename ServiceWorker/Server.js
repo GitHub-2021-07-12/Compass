@@ -4,18 +4,6 @@ importScripts('./ServiceWorker/Options.js');
 
 
 async function _caches_remove() {
-  // let caches_delete_promises = [];
-  // let caches_keys = await caches.keys();
-  
-  // for (let key of caches_keys) {
-  //   if (key == options.cache_name) continue;
-    
-  //   caches_delete_promises.push(caches.delete(key));
-  // }
-  
-  // return Promise.all(caches_delete_promises);
-  
-  
   let caches_keys = (await caches.keys()).filter((key) => key != options.cache_name);
   let caches_delete_promises = caches_keys.map((key) => caches.delete(key));
   
@@ -25,8 +13,6 @@ async function _caches_remove() {
 
 function _on_activate(event) {
   event.waitUntil(_caches_remove());
-  // _caches_remove();
-  // event.waitUntil(clients.claim());
 }
 
 
