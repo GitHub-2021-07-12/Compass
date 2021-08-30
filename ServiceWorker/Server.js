@@ -16,7 +16,7 @@ async function _caches_remove() {
   // return Promise.all(caches_delete_promises);
   
   
-  let caches_keys = (await caches.keys()).filter((key) => key.indexOf(opts.version) !== 0);
+  let caches_keys = (await caches.keys()).filter((key) => key != options.cache_name);
   let caches_delete_promises = caches_keys.map((key) => caches.delete(key));
   
   return Promise.all(caches_delete_promises);
