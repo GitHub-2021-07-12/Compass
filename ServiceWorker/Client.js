@@ -12,7 +12,10 @@ navigator.serviceWorker.controller?.addEventListener('statechange', function () 
 async function main() {
   let button_refresh = document.querySelector('.button_refresh');
   let registration = await navigator.serviceWorker.register('./ServiceWorker.js');
-  button_refresh.addEventListener('click', () => registration.update());
+  button_refresh.addEventListener('click', () => {
+    registration.update();
+    console.log('refresh');
+  });
   registration.addEventListener('updatefound', () => alert('updatefound'));
 }
 
