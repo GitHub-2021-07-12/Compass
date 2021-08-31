@@ -1,2 +1,1 @@
 importScripts('./ServiceWorker/Server.js');
-
