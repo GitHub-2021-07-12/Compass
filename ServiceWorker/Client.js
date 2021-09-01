@@ -1,4 +1,4 @@
-navigator.serviceWorker.register('./ServiceWorker.js');
+navigator.serviceWorker.register('./ServiceWorker.js', {updateViaCache: 'none'});
 
 
 
