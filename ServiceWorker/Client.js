@@ -15,7 +15,10 @@ async function main() {
   button_refresh.addEventListener('click', async () => {
     console.log(await registration.update());
   });
-  registration.addEventListener('updatefound', () => alert('updatefound'));
+  registration.addEventListener('updatefound', (event) => {
+    alert('updatefound');
+    console.log(event);
+  });
 }
 
 
