@@ -1,9 +1,19 @@
-navigator.serviceWorker.register('./ServiceWorker.js', {updateViaCache: 'none'});
+function _on_controllerChange() {
+  // alert('controllerchange - reload page');
+  
+  location.reload();
+}
 
 
 
 
-navigator.serviceWorker.addEventListener('controllerchange', () => alert('controllerchange - reload page'));
+function main() {
+  navigator.serviceWorker.addEventListener('controllerchange', _on_controllerChange);
+  navigator.serviceWorker.register('./ServiceWorker.js', {updateViaCache: 'none'});
+}
+
+
+
 // navigator.serviceWorker.controller?.addEventListener('statechange', function () {alert('statechange ' + this.state)});
 
 
@@ -24,4 +34,4 @@ navigator.serviceWorker.addEventListener('controllerchange', () => alert('contro
 
 
 
-// main();
+main();
