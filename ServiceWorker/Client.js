@@ -13,8 +13,7 @@ async function main() {
   let button_refresh = document.querySelector('.button_refresh');
   let registration = await navigator.serviceWorker.register('./ServiceWorker.js', {updateViaCache: 'none'});
   button_refresh.addEventListener('click', async () => {
-    // console.log(await registration.update());
-    console.log(registration.updateViaCache);
+    console.log(await registration.update());
   });
   registration.addEventListener('updatefound', (event) => {
     alert('updatefound');
