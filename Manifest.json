@@ -1,13 +1,12 @@
 {
   "background_color": "#484",
-  "display": "fullscreen",
+  "display": "standalone",
   "icons": [{
     "sizes": "512x512",
     "src": "./Compass.png"
   }],
   "name": "Compass",
   "orientation": "portrait",
-  "short_name": "Compass",
-  "start_url": "./index.html",
+  "start_url": "./",
   "theme_color": "#484"
 }
