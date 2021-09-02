@@ -13,7 +13,7 @@ function main() {
   
   let button = document.querySelector('button');
   button.addEventListener('click', () => {
-    fetch(new Date());
+    fetch(new Date(), {method: 'post'});
   });
 }
 
