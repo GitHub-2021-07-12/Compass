@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <title>Compass</title>
+    
+    <link rel="icon" href="data:">
+    <link rel="manifest" href="../Manifest.json">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=480, user-scalable=no'>
+    
+    <script type='module' src='../ServiceWorker/Client.js'></script>
+    <script type='module' src='../Components/Compass/Compass.js'></script>
+    
+    <style>
+      :root, body {
+        background: #222;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <button class='button_refresh'>Button</button>
+    
+    <c-compass></c-compass>
+  </body>
+</html>
