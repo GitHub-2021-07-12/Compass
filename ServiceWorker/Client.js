@@ -11,10 +11,10 @@ function main() {
   // navigator.serviceWorker.addEventListener('controllerchange', _on_controllerChange);
   navigator.serviceWorker.register('./ServiceWorker.js', {updateViaCache: 'none'});
   
-  let button = document.querySelector('button');
-  button.addEventListener('click', () => {
-    fetch(new Date(), {method: 'post'});
-  });
+  // let button = document.querySelector('button');
+  // button.addEventListener('click', () => {
+  //   fetch(new Date(), {method: 'post'});
+  // });
 }
 
 
