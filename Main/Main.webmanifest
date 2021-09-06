@@ -2,8 +2,8 @@
   "background_color": "#484",
   "display": "standalone",
   "icons": [{
-    "sizes": "512x512",
-    "src": "./Icon.png"
+    "sizes": "256x256",
+    "src": "./IconX.png"
   }],
   "name": "Compass",
   "orientation": "portrait",
