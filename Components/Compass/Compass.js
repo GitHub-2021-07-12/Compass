@@ -16,6 +16,7 @@ export class Compass extends Component {
   _arrow_rotate() {
     this._quaternion.init(...this._sensor_orientation.quaternion);
     let [vector, angle] = this._quaternion.decay();
+    
     this._arrow.style.setProperty('--_dir_angle', this._dir_angle);
     this._arrow.style.setProperty('--_rotation_angle', angle);
     this._arrow.style.setProperty('--_rotation_vector_x', vector.x);
@@ -30,7 +31,7 @@ export class Compass extends Component {
     this._arrow = this._root.querySelector('.arrow');
     
     this._sensor_orientation.addEventListener('reading', () => this._arrow_rotate());
-    this._sensor_orientation.start();
+    // this._sensor_orientation.start();
     
     // let permissions = await Promise.all([
     //   navigator.permissions.query({name: 'accelerometer'}),
@@ -49,7 +50,7 @@ export class Compass extends Component {
   
   
   
-  // start() {
+  start() {
     // let f = () => {
     //   this._arrow_rotate();
       
@@ -57,9 +58,9 @@ export class Compass extends Component {
     // };
     // requestAnimationFrame(f);
     
-    // this._sensor_orientation.start();
+    this._sensor_orientation.start();
     // this._sensor_orientation.addEventListener('reading', () => this._arrow_rotate());
-  // }
+  }
 }
 
 

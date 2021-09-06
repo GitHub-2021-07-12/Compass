@@ -1,3 +1,3 @@
 let options = {
-  cache_name: 'Compass_0.4.11',
+  cache_name: 'Compass_0.5',
 };
