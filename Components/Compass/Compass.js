@@ -8,7 +8,7 @@ export class Compass extends Component {
   _arrow = null;
   _dir_angle = 0;
   _quaternion = new Quaternion();
-  _sensor_orientation = new AbsoluteOrientationSensor({frequency: 30, referenceFrame: 'screen'});
+  _sensor_orientation = new AbsoluteOrientationSensor({frequency: 10, referenceFrame: 'screen'});
   
   
   
@@ -30,8 +30,8 @@ export class Compass extends Component {
     
     this._arrow = this._root.querySelector('.arrow');
     
-    // this._sensor_orientation.addEventListener('reading', () => this._arrow_rotate());
-    this._sensor_orientation.addEventListener('reading', () => requestAnimationFrame(() => this._arrow_rotate()));
+    this._sensor_orientation.addEventListener('reading', () => this._arrow_rotate());
+    // this._sensor_orientation.addEventListener('reading', () => requestAnimationFrame(() => this._arrow_rotate()));
     // this._sensor_orientation.start();
     
     // let permissions = await Promise.all([

@@ -40,6 +40,7 @@ x_compass {
     rotateZ(calc(var(--_dir_angle) * 1deg))
   ;
   transform-style: preserve-3d;
+  transition: transform;
   width: var(--arrow_size);
 }
 
@@ -48,6 +49,7 @@ x_compass {
   opacity: 0.8;
   position: absolute;
   stroke: #0004;
+  stroke-linejoin: round;
   stroke-width: 1;
 }
 
