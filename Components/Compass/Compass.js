@@ -30,8 +30,8 @@ export class Compass extends Component {
     
     this._arrow = this._root.querySelector('.arrow');
     
-    this._sensor_orientation.addEventListener('reading', () => this._arrow_rotate());
-    // this._sensor_orientation.addEventListener('reading', () => requestAnimationFrame(() => this._arrow_rotate()));
+    // this._sensor_orientation.addEventListener('reading', () => this._arrow_rotate());
+    this._sensor_orientation.addEventListener('reading', () => requestAnimationFrame(() => this._arrow_rotate()));
     // this._sensor_orientation.start();
     
     // let permissions = await Promise.all([
