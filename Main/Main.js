@@ -9,7 +9,7 @@ function main() {
   compass.start();
   
   compass.addEventListener('pointerdown', function () {
-    this.hasAttribute('animated') ? this.setAttribute('animated', true) : this.removeAttribute('animated'));
+    this.hasAttribute('animated') ? this.setAttribute('animated', true) : this.removeAttribute('animated');
   });
 }
 
