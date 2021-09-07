@@ -12,6 +12,10 @@
   transition: transform calc(var(--animation_duration) * 1s) linear;
 }
 
+:host([animated]) .arrow_face_top {
+  fill: #f4f;
+}
+
 
 x_compass {
   --_arrow_size_half: calc(var(--arrow_size) / 2);
