@@ -1,4 +1,5 @@
 :host {
+  --animation_duration: 0.1;
   --arrow_size: 200px;
   --arrow_thickness: 40px;
   --arrow_width: 80px;
@@ -8,7 +9,7 @@
 }
 
 :host([animated]) .arrow {
-  transition: transform 0.1s linear;
+  transition: transform calc(var(--animation_duration) * 1s) linear;
 }
 
 
