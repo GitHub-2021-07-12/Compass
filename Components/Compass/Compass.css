@@ -7,7 +7,7 @@
   height: 100%;
 }
 
-:host([animated='true']) .arrow {
+:host([animated]) .arrow {
   transition: transform 0.1s linear;
 }
 
