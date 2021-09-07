@@ -23,9 +23,10 @@ function _input_on_change() {
 
 
 function main() {
-  _compass.addEventListener('pointerdown', _compass_on_pointerDown);
   _compass.start();
-  _input.addEventListener('change', _input_on_change);
+  
+  // _compass.addEventListener('pointerdown', _compass_on_pointerDown);
+  // _input.addEventListener('change', _input_on_change);
 }
 
 
