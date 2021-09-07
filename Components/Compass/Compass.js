@@ -8,7 +8,7 @@ export class Compass extends Component {
   _arrow = null;
   _dir_angle = 0;
   _quaternion = new Quaternion();
-  _sensor_orientation = new AbsoluteOrientationSensor({frequency: 60, referenceFrame: 'screen'});
+  _sensor_orientation = new AbsoluteOrientationSensor({frequency: 10, referenceFrame: 'screen'});
   
   
   

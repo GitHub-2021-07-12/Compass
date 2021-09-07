@@ -7,6 +7,10 @@
   height: 100%;
 }
 
+:host([animated='true']) .arrow {
+  transition: transform 0.1s linear;
+}
+
 
 x_compass {
   --_arrow_size_half: calc(var(--arrow_size) / 2);
